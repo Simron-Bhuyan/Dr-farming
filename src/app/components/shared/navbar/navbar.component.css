@@ -1,0 +1,88 @@
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: calc(100vh - 70px);
+    padding: 1rem 2rem;
+    min-width: 100vw;
+    max-width: 100vw;
+    height: 70px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    z-index: 7;
+}
+
+.logo .normalLogo,
+.logo .logoOnHover {
+    height: 49px;
+    position: absolute;
+}
+
+.logo .logoOnHover {
+    z-index: 7;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.logo .normalLogo:hover {
+    opacity: 0;
+}
+
+.navMenu {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10vw;
+    justify-content: flex-end;
+    text-transform: uppercase;
+}
+
+.navMenu a span {
+    display: inline-block;
+    position: relative;
+    color: var(--colour);
+}
+
+.navMenu a span:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, var(--themeOne), var(--themeTwo));
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navMenu a span:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navMenu a span:hover {
+    background: linear-gradient(to right, var(--themeOne), var(--themeTwo));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.auth button {
+    background: transparent;
+    border: rgba(0, 0, 0, 0.3) 2px solid;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 7px;
+    font-weight: 550;
+    transform: scale(0.95);
+}
+
+.auth button:hover {
+    background-color: var(--colour);
+    color: var(--bg);
+    transform: scale(1);
+    border-color: rgba(255, 255, 255, 0.7);
+}

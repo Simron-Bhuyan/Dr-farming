@@ -1,0 +1,166 @@
+.landing {
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+    padding-top: calc(70px + 2rem);
+}
+
+.heading span {
+    border-right: .07em solid transparent;
+    height: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    font-size: 3.5rem;
+    animation:
+        blink-caret .70s step-end 7,
+        textShadow 3.5s forwards infinite;
+}
+
+@keyframes textColour {
+    0% {
+        background: var(--bg);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    }
+    
+}
+
+@keyframes textShadow {
+    0% {
+        text-shadow: 3.5px 3.5px 3.5px var(--themeOne);
+    }
+
+    50% {
+        text-shadow: 3.5px 3.5px 3.5px var(--themeTwo)
+    }
+
+    100% {
+        text-shadow: 3.5px 3.5px 3.5px var(--themeOne);
+    }
+}
+
+.heading span::before {
+    font-family: "Forresta Personal Use";
+    content: "Dr. FARMING";
+    font-size: 7rem;
+    animation: typeWriter 7s forwards;
+}
+
+@keyframes typeWriter {
+    0% {
+        content: "";
+    }
+
+    10% {
+        content: "D";
+    }
+
+    20% {
+        content: "Dr";
+    }
+
+    30% {
+        content: "Dr.";
+    }
+
+    34% {
+        content: "Dr. ";
+    }
+
+    40% {
+        content: "Dr. F";
+    }
+
+    50% {
+        content: "Dr. FA";
+    }
+
+    60% {
+        content: "Dr. FAR";
+    }
+
+    70% {
+        content: "Dr. FARM";
+    }
+
+    80%{ 
+        content: "Dr. FARMI";
+    }
+
+    90% {
+        content: "Dr. FARMIN";
+    }
+
+    100% {
+        content: "Dr. FARMING";
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--themeTwo);
+    }
+}
+
+.buttons {
+    position: absolute;
+    bottom: 10vh;
+    margin: 0 auto;
+    width: calc(100vw - 4rem);
+    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.buttons .hyperLinks {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5vw;
+}
+
+.buttons .hyperLinks .leftBtn,
+.buttons .hyperLinks .rightBtn {
+    justify-content: center;
+    text-align: center;
+    background-color: var(--colour);
+    border: rgba(0, 0, 0, 0.3) 2px solid;
+    color: var(--bg);
+    padding: 0.7rem 1rem;
+    border-radius: 35px;
+    margin: 0 auto;
+    width: 300px;
+    text-transform: capitalize;
+}
+
+.buttons .hyperLinks .rightBtn {
+    background-color: var(--bg);
+    color: var(--colour);
+}
+
+.backGround video {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100vw;
+    max-width: 100vw;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@media (max-width: 1024px) {
+    .buttons .hyperLinks {
+        grid-template-columns: auto;
+        grid-gap: 5vw;
+    }
+}
